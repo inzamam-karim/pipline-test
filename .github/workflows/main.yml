@@ -32,7 +32,11 @@ jobs:
           #key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/pusher
-            echo " cache clear"
+            echo "composer update"
+            comopser update
+            echo "generate key clear"
+            php artisan key:generate
+            echo "cache clear"
             php artisan cache:clear
             echo "config clear"
             php artisan config:clear
